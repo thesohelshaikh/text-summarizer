@@ -6,3 +6,4 @@ Automatic text summarization using Extractive method.
 - Python 3.7.0
 - Flask 1.0.2
 - Bootstrap 4.1.3
+- Heroku
