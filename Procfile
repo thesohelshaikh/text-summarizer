@@ -1,1 +1,1 @@
-web: gunicorn text-summarizer.app:application
+web: gunicorn app:app
