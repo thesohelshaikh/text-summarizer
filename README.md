@@ -6,5 +6,7 @@ Automatic text summarization using Extractive method.
 - Python 3.7.0
 - Flask 1.0.2
     - Jinja 2
+    - flask-wtf 0.14.2 
+    - WTForms 2.2.1
 - Bootstrap 4.1.3
 - Heroku
