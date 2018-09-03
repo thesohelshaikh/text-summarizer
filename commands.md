@@ -1,4 +1,6 @@
-# Commands for running the app
+# List of important commands
+
+### Commands for running the app
 ```
 activate mp2
 set FLASK_APP = app.py
@@ -7,12 +9,12 @@ set FLASK_ENV=development
 flask run
 ```
 
-# Commands for setting up requirements
+### Command for setting up requirements for heroku
 ```
 pip freeze > requirements.txt 
 ```
 
-# Commands for heroku
+### Commands for heroku deployment
 ```
 git push heroku master
 heroku open
