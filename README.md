@@ -5,4 +5,5 @@ Automatic text summarization using Extractive method.
 - Anaconda 5.2
 - Python 3.7.0
 - Flask 1.0.2
+    - Jinja 2
 - Bootstrap 4.1.3
