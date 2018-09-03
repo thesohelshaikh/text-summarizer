@@ -7,3 +7,4 @@ Automatic text summarization using Extractive method.
 - Flask 1.0.2
     - Jinja 2
 - Bootstrap 4.1.3
+- Heroku
