@@ -12,7 +12,9 @@
         <fieldset class="form-group">
             <legend class="border-bottom border-success">Summarize using URL</legend>
             {% if form.link.errors %}
-            {{ form.link(class="form-control form-control-lg is-invalid", placeholder="Enter a URL here") }}
+            {{ form.link(class="form-control form-control-lg is-invalid", 
+                        placeholder="Enter a URL here", 
+                        autocomplete="off") }}
             <div class="invalid-feedback">
                 {% for error in form.link.errors %}
                 <span>{{ error }}</span>
@@ -20,10 +22,18 @@
             </div>
 
             {% else %}
-                {{ form.link(class="form-control form-control-lg", placeholder="Enter a URL here") }}
+                {{ form.link(class="form-control form-control-lg", 
+                            placeholder="Enter a URL here", 
+                            autocomplete="off") }}
             {% endif %}
             
         </fieldset>
+        <div class="form-group">
+            {{ form.sum(class="form-control form-control-lg", 
+                        cols="35", 
+                        rows="10", 
+                        placeholder="Your summary will be displayed here......") }}
+        </div>
         <div class="form-group text-center">
             {{ form.submit(class="btn btn-outline-success btn-lg") }}
         </div>
