@@ -5,6 +5,9 @@ from newspaper import Article
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize, sent_tokenize
 
+# for stemming
+from nltk.stem import PorterStemmer
+
 # downloads the article and parses the html, uses lxml parser
 def downloadwebpage(url):
     # downloads the whole webpage
@@ -32,6 +35,11 @@ def removeStopwords(sentence):
 
     # removes english stopwords from sentence (nltk corpus)
     s = [w for w in s if not w in stopwords.words('english')]
+
+    # uses nltk's porter stemmer to stem the sentences
+    # TODO: look for better stemmer
+    stemmer = PorterStemmer()
+    s = [stemmer.stem(word) for word in s]
     return s
 
 def summarize(content):
