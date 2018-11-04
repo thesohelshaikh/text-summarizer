@@ -8,6 +8,9 @@ Automatic text summarization using Extractive method.
     - lxml 4.2.5
     - newspaper3k 0.2.8
     - nltk 3.3
+    - numpy 1.15.2
+    - scipy 1.1.0
+    - gensim 3.4
 - Flask 1.0.2
     - Jinja 2
     - flask-wtf 0.14.2 
