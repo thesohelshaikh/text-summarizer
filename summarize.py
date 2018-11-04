@@ -60,7 +60,6 @@ def removeStopwords(sentence):
 
 
 def sum_it_up(url):
-    # TODO: remove static url and take input from user
     # url = 'https://en.wikipedia.org/wiki/Elon_Musk'
 
     content = downloadwebpage(url)
@@ -70,9 +69,3 @@ def sum_it_up(url):
 
     # computes summary
     return(summarize(content, 0.2))
-
-# def main():
-
-
-# if __name__ == "__main__":
-#     sum_it_up()

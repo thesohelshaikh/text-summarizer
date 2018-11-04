@@ -41,7 +41,7 @@ pylint==2.1.1
 python-dateutil==2.7.3
 PyYAML==3.13
 redis==2.10.6
-requests==2.19.1
+requests==2.20.0
 requests-file==1.4.3
 s3transfer==0.1.13
 scipy==1.1.0
