@@ -25,18 +25,21 @@ Home
         {{ form.link(id="url",
         class="form-control form-control-lg",
         placeholder="Enter a URL here",
-        autocomplete="off") }}
+        autocomplete="off",
+        value=u) }}
         {% endif %}
 
     </fieldset>
     <div class="form-group">
-        {{ form.sum(class="form-control form-control-lg",
-        cols="35",
-        rows="10",
-        placeholder="Your summary will be displayed here......") }}
+        <textarea name="" id="" cols="35" rows="10" class="form-control form-control-lg">
+            {{ text }}
+        </textarea>
     </div>
     <div class="form-group text-center">
         {{ form.submit(class="btn btn-outline-success btn-lg") }}
+        <a href="{{ url_for('main') }}" class="btn btn-outline-success btn-lg">Reset</a>
     </div>
+
+
 </form>
 {% endblock main %}

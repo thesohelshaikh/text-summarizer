@@ -17,6 +17,8 @@ import re
 from gensim.summarization.summarizer import summarize
 
 # downloads the article and parses the html, uses lxml parser
+
+
 def downloadwebpage(url):
     # downloads the whole webpage
     article = Article(url)
@@ -35,6 +37,8 @@ def splitToSentences(content):
     return sent_tokenize(content)
 
 # split text into paragraphs
+
+
 def splitToParagraphs(content):
     # splits the sentences from new line and returns ones which have length greater than 0
     return [c for c in content.split("\n") if len(c) is not 0]
@@ -55,22 +59,20 @@ def removeStopwords(sentence):
     return s
 
 
-def sum_it_up(content):
-    # remove the reference numbers
-    re.sub(r'\[.+\]','',content)
-
-    # computes summary
-    print(summarize(content))
-
-
-def main():
+def sum_it_up(url):
     # TODO: remove static url and take input from user
-    url = 'https://en.wikipedia.org/wiki/Elon_Musk'
+    # url = 'https://en.wikipedia.org/wiki/Elon_Musk'
 
     content = downloadwebpage(url)
 
-    sum_it_up(content)
+    # remove the reference numbers
+    re.sub(r'\[.+\]', '', content)
+
+    # computes summary
+    return(summarize(content, 0.2))
+
+# def main():
 
 
-if __name__ == "__main__":
-    main()
+# if __name__ == "__main__":
+#     sum_it_up()

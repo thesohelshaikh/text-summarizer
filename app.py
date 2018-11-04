@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, request
 
 # For flashing a  message
 from flask import flash
@@ -12,10 +12,24 @@ from flask import url_for
 # Import our forms
 from forms import LinkForm
 
+from summarize import sum_it_up
+
 # intatiates flask app, configures the application
 app = Flask(__name__) 
 
 app.config['SECRET_KEY'] = 'This is a secret'
+
+@app.route("/summary", methods=["GET", "POST"])
+def summary():
+    form = LinkForm()
+    # u = request.args.get("url")
+    u = form.link.data
+    text = sum_it_up(u)
+
+    
+    if form.validate_on_submit():
+        flash(f'Summarized!', 'success')
+    return render_template('summary.html', form=form, text=text, u=u)
 
 @app.route("/",  methods=['GET','POST'])
 def main():
