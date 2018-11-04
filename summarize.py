@@ -1,3 +1,5 @@
+# TODO: Remove unsused libraries and finctions
+
 # for scraping the webpage
 from newspaper import Article
 
@@ -7,6 +9,12 @@ from nltk.tokenize import word_tokenize, sent_tokenize
 
 # for stemming
 from nltk.stem import PorterStemmer
+
+# for removing square brackets
+import re
+
+# Gensim summarizer
+from gensim.summarization.summarizer import summarize
 
 # downloads the article and parses the html, uses lxml parser
 def downloadwebpage(url):
@@ -20,6 +28,8 @@ def downloadwebpage(url):
     return text
 
 # split a paragraph into sentences.
+
+
 def splitToSentences(content):
     # tokenizes each of the sentences
     return sent_tokenize(content)
@@ -30,6 +40,8 @@ def splitToParagraphs(content):
     return [c for c in content.split("\n") if len(c) is not 0]
 
 # stem and remove any stop words form a sentence
+
+
 def removeStopwords(sentence):
     s = word_tokenize(sentence)
 
@@ -37,29 +49,28 @@ def removeStopwords(sentence):
     s = [w for w in s if not w in stopwords.words('english')]
 
     # uses nltk's porter stemmer to stem the sentences
-    # TODO: look for better stemmer
+
     stemmer = PorterStemmer()
     s = [stemmer.stem(word) for word in s]
     return s
 
-def summarize(content):
-    paragraphs = splitToParagraphs(content)
-    sentences = []
-    
-    for p in paragraphs:
-        s = splitToSentences(p) 
-        for x in s:
-            sentences.append(x)
-    
-    cleanedSentences = [removeStopwords(x) for x in sentences]
-    print(cleanedSentences)
+
+def sum_it_up(content):
+    # remove the reference numbers
+    re.sub(r'\[.+\]','',content)
+
+    # computes summary
+    print(summarize(content))
+
 
 def main():
-    url = 'https://en.wikipedia.org/wiki/Elon_Musk' # TODO: remove static url and take input from user
+    # TODO: remove static url and take input from user
+    url = 'https://en.wikipedia.org/wiki/Elon_Musk'
+
     content = downloadwebpage(url)
 
-    summarize(content)
+    sum_it_up(content)
 
 
-if __name__== "__main__":
+if __name__ == "__main__":
     main()
