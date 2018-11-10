@@ -31,20 +31,18 @@ Home
 
     </fieldset>
     <div class="form-group">
-            <label for="summary">Summary</label>
-        <textarea name="" id="summary" cols="35" rows="10" class="form-control form-control-lg" readonly>
-            {{ text }}
+        <label for="summary" class="text-success">Summary</label>
+        <textarea name="" id="summary" cols="35" rows="10" class="form-control form-control-lg" readonly>{{ text }}
         </textarea>
     </div>
     <div class="form-group">
-        <label for="keywords">Keywords</label>
+        <label for="keywords" class="text-success">Keywords</label>
         <input id="keywords" type="text" value="{{ keywords }}" class="form-control form-control-lg" readonly>
     </div>
     <div class="form-group text-center">
-        {{ form.submit(class="btn btn-outline-success btn-lg") }}
+        {{ form.submit(class="btn btn-success btn-lg") }}
         <a href="{{ url_for('main') }}" class="btn btn-outline-success btn-lg">Reset</a>
     </div>
-
 
 </form>
 {% endblock main %}
