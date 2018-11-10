@@ -31,9 +31,14 @@ Home
 
     </fieldset>
     <div class="form-group">
-        <textarea name="" id="" cols="35" rows="10" class="form-control form-control-lg">
+            <label for="summary">Summary</label>
+        <textarea name="" id="summary" cols="35" rows="10" class="form-control form-control-lg" readonly>
             {{ text }}
         </textarea>
+    </div>
+    <div class="form-group">
+        <label for="keywords">Keywords</label>
+        <input id="keywords" type="text" value="{{ keywords }}" class="form-control form-control-lg" readonly>
     </div>
     <div class="form-group text-center">
         {{ form.submit(class="btn btn-outline-success btn-lg") }}

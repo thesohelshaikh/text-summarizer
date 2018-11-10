@@ -1,4 +1,3 @@
-# TODO: Remove unsused libraries and finctions
 
 # for scraping the webpage
 from newspaper import Article
@@ -15,6 +14,11 @@ import re
 
 # Gensim summarizer
 from gensim.summarization.summarizer import summarize
+
+# For extracting the keywords
+from gensim.summarization import keywords
+
+# FIXME: Remove unsused libraries and finctions
 
 # downloads the article and parses the html, uses lxml parser
 
@@ -67,5 +71,7 @@ def sum_it_up(url):
     # remove the reference numbers
     re.sub(r'\[.+\]', '', content)
 
+    k = keywords(content, words=10, lemmatize=True).split('\n')
+    kwords = ', '.join(k)
     # computes summary
-    return(summarize(content, 0.2))
+    return(summarize(content, 0.2), kwords)
