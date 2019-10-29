@@ -33,7 +33,7 @@ mccabe==0.6.1
 murmurhash==1.0.1
 networkx==2.2
 newspaper3k==0.2.8
-nltk==3.3
+nltk==3.4.5
 numpy==1.15.2
 Pillow==6.2.0
 pycodestyle==2.4.0
