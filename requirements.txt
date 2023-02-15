@@ -51,6 +51,6 @@ tinysegmenter==0.3
 tldextract==2.2.0
 toolz==0.9.0
 urllib3==1.26.5
-Werkzeug==0.15.3
+Werkzeug==2.2.3
 wrapt==1.10.11
 WTForms==2.2.1
